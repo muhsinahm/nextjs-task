@@ -9,7 +9,7 @@ import {
   Link,
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-const userAvatar = "https://i.pravatar.cc/150?u=jane_cooper";
+const userAvatar = "https://i.pravatar.cc/70";
 
 export default function HeaderSection() {
   return (
