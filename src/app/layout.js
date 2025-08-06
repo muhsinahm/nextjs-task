@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import HeaderSection from "@/components/HeaderSection";
+import FooterSection from "@/components/FooterSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,9 +27,7 @@ export default function RootLayout({ children }) {
         <HeaderSection />
 
         <main className="flex-grow p-4">{children}</main>
-        <footer className="bg-gray-800 text-white p-4 text-center">
-          <p>© My App. All rights reserved.</p>
-        </footer>
+        <FooterSection />
       </body>
     </html>
   );
