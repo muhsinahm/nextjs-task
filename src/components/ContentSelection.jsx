@@ -13,6 +13,7 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Slider,
 } from "@mui/material";
 
 const darkTheme = createTheme({
@@ -110,10 +111,14 @@ const subTopics = {
 function ContentSelection() {
   const [selectedType, setSelectedType] = useState("Fun");
   const [selectedSubTopic, setSelectedSubTopic] = useState("");
+  const [wordCount, setWordCount] = useState(700);
 
   const handleTypeChange = (type) => {
     setSelectedType(type);
     setSelectedSubTopic("");
+  };
+  const handleSliderChange = (event, newValue) => {
+    setWordCount(newValue);
   };
   return (
     <ThemeProvider theme={darkTheme}>
@@ -200,6 +205,25 @@ function ContentSelection() {
               ))}
             </Select>
           </FormControl>
+          <Box sx={{ mt: 2, p: 3, bgcolor: "#1E1E1E", borderRadius: 4 }}>
+            <Stack
+              spacing={2}
+              direction="row"
+              sx={{ mb: 1 }}
+              alignItems="center"
+            >
+              <Typography>100</Typography>
+              <Slider
+                value={wordCount}
+                onChange={handleSliderChange}
+                aria-labelledby="word-count-slider"
+                valueLabelDisplay="on"
+                min={100}
+                max={1000}
+              />
+              <Typography>1000</Typography>
+            </Stack>
+          </Box>
         </Box>
       </Box>
     </ThemeProvider>
